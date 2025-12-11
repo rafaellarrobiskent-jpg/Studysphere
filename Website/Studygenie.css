@@ -1,0 +1,101 @@
+:root { 
+  --accent-primary: #4DD0E1;
+  --bg-main: #1E293B;
+  --bg-surface: #2D3A4E;
+  --text-primary: #F1F5F9;
+  --text-secondary: #CBD5E1;
+}
+
+body {
+  background: var(--bg-main);
+  color: var(--text-primary);
+}
+
+/* MAIN CHAT CONTAINER */
+.genie-container {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.genie-title {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: var(--accent-primary);
+}
+
+.chat-box {
+  height: 380px;               /* 🔥 MAS GAMAY NA BOX */
+  background: var(--bg-surface);
+  border-radius: 12px;
+  padding: 15px;
+  overflow-y: auto;
+  box-shadow: 0 0 18px rgba(0,0,0,0.4);
+  border-left: 4px solid var(--accent-primary);
+}
+
+/* USER & AI MESSAGES */
+.message {
+  padding: 10px 14px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  max-width: 80%;
+  animation: fadeIn 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.user-msg {
+  background: rgba(255,255,255,0.06);
+  margin-left: auto;
+  border-left: 3px solid var(--accent-primary);
+}
+
+.ai-msg {
+  background: rgba(255,255,255,0.08);
+  border-left: 3px solid var(--accent-primary);
+}
+
+
+.input-area {
+  display: flex;
+  margin-top: 15px;
+  gap: 10px;
+}
+
+.input-area input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  outline: none;
+}
+
+.send-btn {
+  background: var(--accent-primary);
+  border: none;
+  width: 50px;                
+  height: 50px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #021129;
+  font-size: 1.3rem;        
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.send-btn i {
+  pointer-events: none;
+}
+
+.send-btn:hover {
+  filter: brightness(1.1);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}

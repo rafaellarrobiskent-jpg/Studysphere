@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Resource Hub - StudySphere</title>
+
+
+  <link rel="stylesheet" href="style.css">
+
+
+  <link rel="stylesheet" href="resourcehub.css">
+
+
+<body class="dark-theme">
+
+  <header class="site-header">
+    <div class="logo-container">
+      <span class="logo-text">StudySphere</span>
+    </div>
+    <nav class="site-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="studytools.html">Study Tools</a></li>
+        <li><a href="community.html">Community</a></li>
+        <li><a href="resourcehub.html">Resource Hub</a></li>
+        <li><a href="fun.html">Fun & Motivation</a></li>
+        <li><a href="studygenie.html">Studygenie</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <main class="hub-container">
+
+    <!-- SHARED NOTES -->
+    <section class="hub-section" id="notesSection">
+      <h2 class="section-title"><i class="fa-solid fa-note-sticky"></i> Shared Notes Library</h2>
+
+      <div class="input-row">
+        <input id="notesInput" type="text" placeholder="Add a new note title (or paste short note)..." />
+        <button id="notesAddBtn" class="btn primary">Add Note</button>
+      </div>
+
+      <table class="hub-table" aria-describedby="notesSection">
+        <thead>
+          <tr>
+            <th>Note</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="notesList"></tbody>
+      </table>
+    </section>
+
+    <!-- STUDYGENIE BOARD -->
+    <section class="hub-section" id="genieSection">
+      <h2 class="section-title"><i class="fa-solid fa-wand-magic-sparkles"></i> StudyGenie Board</h2>
+
+      <div class="input-row">
+        <input id="genieInput" type="text" placeholder="Enter a topic for suggestions..." />
+        <button id="genieAddBtn" class="btn primary">Generate</button>
+      </div>
+
+      <table class="hub-table" aria-describedby="genieSection">
+        <thead>
+          <tr>
+            <th>Suggestion</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="genieList"></tbody>
+      </table>
+    </section>
+
+    <!-- EVENT CALENDAR -->
+    <section class="hub-section" id="eventSection">
+      <h2 class="section-title"><i class="fa-solid fa-calendar-days"></i> Event Calendar</h2>
+
+      <div class="input-row">
+        <input id="eventInput" type="text" placeholder="Event name..." />
+        <input id="eventDate" type="date" />
+        <button id="eventAddBtn" class="btn primary">Add Event</button>
+      </div>
+
+      <table class="hub-table" aria-describedby="eventSection">
+        <thead>
+          <tr>
+            <th>Event</th>
+            <th>Date</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="eventList"></tbody>
+      </table>
+    </section>
+
+  </main>
+  <script src="resourcehub.js"></script>
+</body>
+</html>

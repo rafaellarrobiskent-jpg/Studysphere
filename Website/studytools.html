@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>StudySphere</title>
+  <link rel="stylesheet" href="studytools.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <a href="index.html" class="logo">StudySphere</a>
+    </div>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="site-nav" aria-label="Primary">
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+      </ul>
+    </nav>
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">Dark</button>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Focus better, learn smarter.</h1>
+      <p>Your student productivity hub—organized, accessible, consistent.</p>
+    </section>
+
+    <section class="grid">
+
+  <article class="card">
+    <h2>Pomodoro Timer</h2>
+    <p>Stay on track with focused work sprints and breaks.</p>
+    <a class="btn" href="pomodoro.html">Start Pomodoro</a>
+  </article>
+
+  <article class="card">
+    <h2>Goal Tracker</h2>
+    <p> Set, track, and achieve your study goals effectively.</p>
+    <a class="btn" href="goaltracker.html">Open Planner</a>
+  </article>
+
+  <article class="card">
+    <h2>AI Flashcards</h2>
+    <p>Generate smart flashcards instantly from your notes.</p>
+    <a class="btn" href="flashcards.html">Create Flashcards</a>
+  </article>
+
+  <article class="card">
+    <h2>Resource Hub</h2>
+    <p>Quick links to helpful references and notes.</p>
+    <a class="btn" href="resourcehub.html">Browse Resources</a>
+  </article>
+
+  <article class="card">
+    <h2>Student Community</h2>
+    <p>Connect with peers, share tips, and collaborate.</p>
+    <a class="btn" href="community.html">Join Community</a>
+  </article>
+
+  <article class="card">
+    <h2>Fun & Motivation</h2>
+    <p>Stay inspired with quotes, games, and challenges.</p>
+    <a class="btn" href="fun.html">Explore Fun</a>
+  </article>
+
+  <article class="card">
+    <h2>Study Groups</h2>
+    <p>Form or join study circles to collaborate on lessons and projects.</p>
+    <a class="btn" href="groups.html">View Groups</a>
+  </article>
+
+  <article class="card">
+    <h2>StudyGenie (ChatGPT)</h2>
+    <p>Ask questions, get explanations, and boost learning with AI assistance.</p>
+    <a class="btn" href="studygenie.html">Chat with Genie</a>
+  </article>
+</section>
+
+  </main>
+
+  <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const siteNav = document.querySelector('.site-nav');
+    navToggle.addEventListener('click', () => {
+      const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', String(!expanded));
+      siteNav.classList.toggle('open');
+    });
+
+    const themeBtn = document.getElementById('theme-toggle');
+    const root = document.documentElement;
+    function applyTheme(mode) {
+      root.setAttribute('data-theme', mode);
+      themeBtn.textContent = mode === 'dark' ? 'Light' : 'Dark';
+      localStorage.setItem('theme', mode);
+    }
+    const saved = localStorage.getItem('theme') || 'light';
+    applyTheme(saved);
+    themeBtn.addEventListener('click', () => {
+      const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      applyTheme(next);
+    });
+  </script>
+</body>
+</html>

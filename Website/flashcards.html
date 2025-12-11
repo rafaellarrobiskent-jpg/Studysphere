@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Flashcards</title>
+
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="flashcards.css">
+
+
+  <link rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<header>
+  <div class="logo-text">StudySphere</div>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="Pomodoro.html">Pomodoro</a></li>
+      <li><a href="goaltracker.html">Goal Tracker</a></li>
+      <li><a href="flashcards.html">Flashcards</a></li>
+      <li><a href="community.html">Community</a></li>
+      <li><a href="resourcehub.html">Resource Hub</a></li>
+      <li><a href="fun.html">Fun & Motivation</a></li>
+      <li><a href="studygenie.html">Genie</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="flash-container">
+  <h1 class="flash-title">AI Flashcards</h1>
+
+
+  <div class="flash-input-box">
+    <input id="term" type="text" placeholder="Enter term...">
+    <input id="definition" type="text" placeholder="Enter definition...">
+    <button onclick="generateFlashcard()" class="add-btn">
+      <i class="fas fa-plus"></i> Add
+    </button>
+  </div>
+
+ 
+  <div id="flashGrid" class="flash-grid"></div>
+</div>
+
+
+<script src="flashcards.js"></script>
+</body>
+</html>

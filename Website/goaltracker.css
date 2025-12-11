@@ -1,0 +1,210 @@
+:root { 
+  --accent-primary: #4DD0E1;
+  --bg-main: #1E293B;
+  --bg-surface: #2D3A4E;
+  --text-primary: #F1F5F9;
+  --text-secondary: #CBD5E1;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: Arial, sans-serif;
+  background: var(--bg-main);
+  color: var(--text-primary);
+}
+
+
+
+/* NAV */
+header {
+  background-color: #2c2c3c;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .logo-text {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--accent-primary);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  color: #ffd369;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.section-header {
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid #444;
+}
+/* Container shared with flashcards style */
+.flash-container {
+  max-width: 980px;
+  margin: 36px auto;
+  padding: 0 20px 60px;
+}
+.flash-title {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--accent-primary);
+  margin-bottom: 18px;
+}
+
+/* Input */
+.flash-input-box {
+  display:flex;
+  gap:10px;
+  justify-content:center;
+  margin-bottom:20px;
+}
+.flash-input-box input{
+  flex:1;
+  max-width:640px;
+  padding:12px;
+  border-radius:8px;
+  background:var(--bg-surface);
+  border:none;
+  color:var(--text-primary);
+}
+.add-btn {
+  background: var(--accent-primary);
+  border: none;
+  padding: 12px 16px;
+  border-radius: 8px;
+  color: #021129;
+  font-weight: 700;
+  cursor:pointer;
+}
+.add-btn:hover{ filter:brightness(1.05); }
+
+/* Grid */
+.flash-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+/* Flip card (matches flashcards style) */
+.flash-card {
+  width: 100%;
+  height: 180px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.flash-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform .6s;
+  transform-style: preserve-3d;
+}
+
+.flash-card.flipped .flash-inner {
+  transform: rotateY(180deg);
+}
+
+/* shared face styles */
+.flash-front, .flash-back {
+  position:absolute;
+  inset:0;
+  backface-visibility: hidden;
+  background: var(--bg-surface);
+  border-radius: 12px;
+  padding: 16px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  color:var(--text-primary);
+  font-size:1.05rem;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.45);
+  border:1px solid rgba(255,255,255,0.04);
+}
+
+/* front */
+.flash-front {
+  text-align:center;
+}
+
+/* back */
+.flash-back {
+  transform: rotateY(180deg);
+  gap:10px;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+
+/* back contents */
+.progress-row{
+  width:100%;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  justify-content:space-between;
+  margin-top:6px;
+}
+.progress-input {
+  width:100%;
+}
+.progress-percent {
+  color:var(--accent-primary);
+  font-weight:700;
+  min-width:55px;
+  text-align:right;
+}
+
+/* small controls area */
+.card-controls {
+  width:100%;
+  display:flex;
+  gap:8px;
+  justify-content:space-between;
+  margin-top:10px;
+}
+
+/* save & delete buttons */
+.save-btn {
+  flex:1;
+  padding:8px 10px;
+  border-radius:8px;
+  border:none;
+  background:var(--accent-primary);
+  color:#021129;
+  font-weight:700;
+  cursor:pointer;
+}
+.delete-btn {
+  padding:8px 10px;
+  border-radius:8px;
+  border:none;
+  background:#ff4d4d;
+  color:#fff;
+  font-weight:700;
+  cursor:pointer;
+}
+
+/* prevent pointer events on inner buttons from flipping */
+.flash-card button { cursor:pointer; }
+
+/* smaller screens tweaks */
+@media (max-width:600px){
+  .flash-card { height:160px; }
+  .flash-title { font-size:1.6rem; }
+}

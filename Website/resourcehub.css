@@ -6,7 +6,6 @@
   --text-primary: #F1F5F9;
   --text-secondary: #CBD5E1;
 
-  /* ➕ FIXED DELETE BUTTON COLOR */
   --danger: #ff4d4d;
 }
 
@@ -22,7 +21,7 @@ body {
   transition: background-color 0.5s, color 0.5s;
 }
 
-/* NAVIGATION */
+
 header {
   background-color: #2c2c3c;
   padding: 1rem;
@@ -70,14 +69,14 @@ nav a:hover {
   border-bottom: 1px solid rgba(255,255,255,0.03);
 }
 
-/* MAIN CONTAINER */
+
 .hub-container {
   max-width: 1100px;
   margin: 28px auto;
   padding: 0 20px 60px;
 }
 
-/* SECTION */
+
 .hub-section {
   background: var(--bg-surface);
   padding: 22px;
@@ -138,7 +137,7 @@ nav a:hover {
   color: var(--text-primary);
 }
 
-/* TABLE */
+
 .hub-table { 
   width: 100%; 
   border-collapse: collapse; 
@@ -165,8 +164,6 @@ nav a:hover {
   margin-right: 8px; 
   color: var(--accent-primary); 
 }
-
-/* DELETE BUTTON — FIXED + VISIBLE + CLEAN */
 .trash-btn {
   background: var(--danger);
   color: white;
@@ -189,14 +186,14 @@ nav a:hover {
   box-shadow: 0 0 8px rgba(255, 100, 100, 0.6);
 }
 
-/* X Icon inside button */
+
 .trash-btn::before {
   content: "✖";      
   font-size: 1.1rem;
   font-weight: bold;
 }
 
-/* RESPONSIVE */
+
 @media(max-width: 900px) {
   .input-row { 
     flex-direction: column; 
